@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using BiebCWebsite.Data;
 namespace BiebCWebsite
 {
     public class Program
@@ -5,6 +8,8 @@ namespace BiebCWebsite
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<BiebCWebsiteContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("BiebCWebsiteContext") ?? throw new InvalidOperationException("Connection string 'BiebCWebsiteContext' not found.")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

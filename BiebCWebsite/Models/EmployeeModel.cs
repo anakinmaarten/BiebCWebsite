@@ -1,7 +1,10 @@
-﻿namespace BiebCWebsite.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BiebCWebsite.Models
 {
     public class EmployeeModel
     {
+        [Key]
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string lastName { get; set; }

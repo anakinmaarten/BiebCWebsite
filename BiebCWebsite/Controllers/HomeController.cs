@@ -22,6 +22,20 @@ namespace BiebCWebsite.Controllers
         {
             return View();
         }
+        // new views added:
+        public IActionResult Course()
+        {
+            return View();
+        }
+        public IActionResult Student()
+        {
+            return View();
+        }
+        public IActionResult Teacher()
+        {
+            return View();
+        }
+        // end new views
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
